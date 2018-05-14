@@ -1,0 +1,24 @@
+<div class="header">
+  <h2>Admin Dashboard</h2>
+  <button class="btn" (click)="logOut()" id="logout">Log Out</button>
+  <button class="btn" [routerLink]="['dashboard']">Dashboard</button>
+  <button class="btn" [routerLink]="['newmember']">Add a new member</button>
+  <button class="btn" [routerLink]="['create']">Create a new item</button>
+  <button class="btn" [routerLink]="['/board/list']" id="mine">My Items</button>
+</div>
+<div class="main">
+  <router-outlet (activate)="getUsers()"></router-outlet>
+</div>
+<div class="right">
+    <div class="users">
+        <h4 style="color: rgb(0, 147, 24)">Online</h4>
+        <ul *ngFor="let user of online">
+            <li>{{ user.name }}</li>
+        </ul>
+        <hr class="light">
+        <h4 style="color: gray">Offline</h4>
+        <ul *ngFor="let user of offline">
+            <li>{{ user.name }}</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+.header{
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px solid black;
+    background-color: #9E9E9E;
+    display: inline-block;
+    box-shadow: 2px 2px 2px grey;
+    border-radius: 5px 5px 0px 0px;
+}
+h2{
+    text-align: center;
+}
+.btn{
+    height: 24px;
+    margin-left: .5%;
+    background: linear-gradient(#E0E0E0, #9E9E9E, black);
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px grey;
+    text-decoration: none;
+}
+.logout{
+    width: 50px;
+    height: 24px;
+    background: linear-gradient(lightgreen, green, black);
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px grey;
+    text-decoration: none;
+}
+.main{
+    width: 89.8%;
+    vertical-align: top;
+    height: 83vh;
+    display: inline-block;
+    background-color: #BDBDBD;
+    border-right: 2px solid black;
+}
+.right {
+    width: 9.8%;
+    height: 83vh;
+    background-color: #BDBDBD;
+    float: right;
+    border-right: 2px solid black;
+}
+.users, .chat {
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+.users{
+    width: 21.3%;
+}
+h4 {
+    margin-left: 20px;
+    color: #9e9e9e;
+}
+.chat {
+    background-color: #F2F2F2;
+    width: 77%;
+    margin: 0;
+border-left: 2px solid black;
+}
+.inputbox{
+    margin-left: 3px;
+}
+#output {
+    height: 95%;
+}
+.chat input:first-of-type {
+    width: 87%;
+}
+.light{
+    color: grey;
+}
+#logout:visited {
+    color: blue;
+}
+#logout {
+    float: right;
+    margin-right: 10px;
+}
+h3, h4, ul {
+    margin-left: 2%;
+}

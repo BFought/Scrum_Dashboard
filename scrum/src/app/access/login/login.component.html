@@ -1,0 +1,17 @@
+<div id="wrapper">
+  <h1>Login</h1>
+  <form (ngSubmit)="loginUser()" #regForm="ngForm">
+      <table>
+          <tr>
+              <td>Email:</td>
+              <td><input type="text" name="user.email" [(ngModel)]=user.email required></td>
+          </tr>
+          <tr>
+              <td>Password:</td>
+              <td><input type="password" name="user.password" [(ngModel)]=user.password required></td>
+          </tr>
+      </table> 
+      <button type="submit" [disabled]="!regForm.form.valid">Login</button>
+  </form>
+  <p *ngIf="errors != ''" style="color: red">{{ errors }}</p>
+</div>

@@ -1,0 +1,110 @@
+<script src="./script.js"></script>
+<div id='wrapper' ng-app="list" ng-controller="listCtrl">
+  <div id="listed" class="list-box">
+    <h2>Listed</h2>
+    <div *ngFor="let item of listedList" class="item-box" ng-sortable="sortOptions">
+      <p *ngIf="!item.danger" (click)="showDetails(item._id)">{{ item.title }}</p>
+      <p *ngIf="item.danger" class="danger" (click)="showDetails(item._id)">{{ item.title }}</p>
+      <div class="detail-box" *ngIf="specific._id == item._id">
+        <ul>
+          <li>Priority: {{ item.value }}</li>
+          <li>Description: {{ item.description }}</li>
+          <li>Bugs: 
+            <ul>
+              <li *ngFor="let bug of item.bugs">{{ bug }}</li>
+              <li><input type="text" name="bug" [(ngModel)]="bug" placeholder="Enter bug description"><button (click)="addBug(item._id)">Add bug</button></li>
+            </ul>
+          </li>
+        </ul>
+        <form (submit)="updateStatus(status.value)" #myForm="ngForm">
+          <select name="status" #status required>
+            <option [ngValue]="null" disabled>Change status</option>
+            <option [ngValue]="Working">Working</option>
+            <option [ngValue]="Testing">Testing</option>
+            <option [ngValue]="Completed">Completed</option>
+          </select>
+          <button type="submit" [disabled]="!myForm.form.valid">Update</button>
+        </form>
+        <button type="button" class="delete" (click)="deleteItem(item._id)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <div id="working" class="list-box">
+    <h2>Working</h2>
+    <div *ngFor="let item of workingList" class="item-box" ng-sortable="sortOptions">
+        <p *ngIf="!item.danger" (click)="showDetails(item._id)">{{ item.title }}</p>
+        <p *ngIf="item.danger" class="danger" (click)="showDetails(item._id)">{{ item.title }}</p>
+      <div class="detail-box" *ngIf="specific._id == item._id">
+        <ul>
+          <li>Priority: {{ item.value }}</li>
+          <li>Description: {{ item.description }}</li>
+          <li>Bugs: 
+            <ul>
+              <li *ngFor="let bug of item.bugs">{{ bug }}</li>
+              <li><input type="text" name="bug" [(ngModel)]="bug" placeholder="Enter bug description"><button (click)="addBug(item._id)">Add bug</button></li>
+            </ul>
+          </li>
+        </ul>
+        <form (submit)="updateStatus(status.value)" #myForm="ngForm">
+          <select name="status" #status required>
+            <option [ngValue]="null" disabled>Change status</option>
+            <option [ngValue]="Listed">Listed</option>
+            <option [ngValue]="Testing">Testing</option>
+            <option [ngValue]="Completed">Completed</option>
+          </select>
+          <button type="submit" [disabled]="!myForm.form.valid">Update</button>
+        </form>
+        <button type="button" class="delete" (click)="deleteItem(item._id)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <div id="testing" class="list-box">
+    <h2>Testing</h2>
+    <div *ngFor="let item of testingList" class="item-box" ng-sortable="sortOptions">
+      <p *ngIf="!item.danger" (click)="showDetails(item._id)">{{ item.title }}</p>
+      <p *ngIf="item.danger" class="danger" (click)="showDetails(item._id)">{{ item.title }}</p>
+      <div class="detail-box" *ngIf="specific._id == item._id">
+        <ul>
+          <li>Priority: {{ item.value }}</li>
+          <li>Description: {{ item.description }}</li>
+          <li>Bugs: 
+            <ul>
+              <li *ngFor="let bug of item.bugs">{{ bug }}</li>
+              <li><input type="text" name="bug" [(ngModel)]="bug" placeholder="Enter bug description"><button (click)="addBug(item._id)">Add bug</button></li>
+            </ul>
+          </li>
+        </ul>
+        <form (submit)="updateStatus(status.value)" #myForm="ngForm">
+          <select name="status" #status required>
+            <option [ngValue]="null" disabled>Change status</option>
+            <option [ngValue]="Listed">Listed(test-failed)</option>
+            <option [ngValue]="Working">Working(test-failed)</option>
+            <option [ngValue]="Completed">Completed</option>
+          </select>
+          <button type="submit" [disabled]="!myForm.form.valid">Update</button>
+        </form>
+        <button type="button" class="delete" (click)="deleteItem(item._id)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <div id="completed" class="list-box">
+    <h2>Completed</h2>
+    <div *ngFor="let item of completedList" class="item-box" ng-sortable="sortOptions">
+      <p *ngIf="!item.danger" (click)="showDetails(item._id)">{{ item.title }}</p>
+      <p *ngIf="item.danger" class="danger" (click)="showDetails(item._id)">{{ item.title }}</p>
+      <div class="detail-box" *ngIf="specific._id == item._id">
+        <ul>
+          <li>Priority: {{ item.value }}</li>
+          <li>Description: {{ item.description }}</li>
+          <li>Bugs: 
+            <ul>
+              <li *ngFor="let bug of item.bugs">{{ bug }}</li>
+              <li><input type="text" name="bug" [(ngModel)]="bug" placeholder="Enter bug description"><button (click)="addBug(item._id)">Add bug</button></li>
+            </ul>
+          </li>
+        </ul>
+        <button type="button" class="delete" (click)="deleteItem(item._id)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

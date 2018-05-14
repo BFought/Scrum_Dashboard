@@ -1,0 +1,8 @@
+<div>
+  <div class="header">
+    <h2>User Dashboard</h2>
+    <button class="btn" *ngIf="user.status == 'Admin'" (click)="toAdmin()">Back</button>
+    <button class="btn" (click)="logOut()" id="logout">Log Out</button>
+  </div>
+  <router-outlet></router-outlet>
+</div>

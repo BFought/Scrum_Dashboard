@@ -1,0 +1,27 @@
+<h1>SCRUM Backlog</h1>
+<div class="container">
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Value</th>
+            <th>Member</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let item of items">
+            <td>{{ item.title }}</td>
+            <td>{{ item.value }}</td>
+            <td>
+                <p *ngIf="!item.owner" style="color: red">Unassigned</p>
+                <p class="link" *ngIf="item.owner" (click)="toInfo(item.owner)">{{ item.owner.name }}</p>
+            </td>
+            <td>{{ item.status }}</td>
+            <td>
+                <button (click)="toEditor(item._id)">Edit</button> 
+                <select *ngIf="!item.owner" [(ngModel)]="owner">
+                    <option *ngFor="let user of users" value="{{ user._id }}">{{ user.name }}</option>
+                </select><button *ngIf="!item.owner" (click)="assignItem(item._id)">Assign</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,28 @@
+<div id="wrapper">
+  <h1>Registration</h1>
+  <form (ngSubmit)="registerUser()" #logForm="ngForm">
+      <table>
+          <tr>
+              <td>Name:</td>
+              <td><input type="text" name="user.name" [(ngModel)]="user.name"></td>
+          </tr>
+          <tr>
+              <td>Email:</td>
+              <td><input type="text" name="user.email" [(ngModel)]="user.email" required></td>
+          </tr>
+          <tr>
+              <td>Password:</td>
+              <td><input type="password" name="user.password" [(ngModel)]="user.password" required></td>
+          </tr>
+          <tr>
+              <td>Confirm Password:</td>
+              <td><input type="password" name="passconf" [(ngModel)]="passconf" required></td>
+          </tr>
+      </table>
+      <button type="submit" [disabled]="!logForm.form.valid">Register</button>
+  </form>
+  <p *ngIf="user.password != passconf">Password and confirmation must match</p>
+  <p *ngFor="let error of errors">
+    {{ error }}
+  </p>
+</div>

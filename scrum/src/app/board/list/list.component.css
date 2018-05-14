@@ -1,0 +1,77 @@
+.list-box {
+    float: left;
+    height: 80vh;
+    width: 22%;
+    padding: 1%;
+    margin: 0 0.5%;
+    overflow-y: auto;
+}
+
+.item-box {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 0;
+    background-color: #E0E0E0;
+}
+
+.list-box, .item-box {
+    box-shadow: 0 0 3px 1px black;
+}
+
+.detail-box {
+    background: rgba(255, 255, 255, 0.5);
+    padding-bottom: 5px;
+}
+
+.danger {
+    background-color: red;
+    color: white;
+}
+
+.delete {
+    background-color: red;
+    color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+ul {
+    margin: 0;
+    padding: 5px 0 5px 40px;
+}
+
+#listed {
+    background-color: rgb(163, 163, 163); 
+}
+
+#working {
+    background-color: rgb(82, 198, 252);
+}
+
+#testing {
+    background-color: rgb(255, 255, 93);
+}
+
+#completed {
+    background-color: rgb(46, 209, 46);
+}
+
+.failed {
+    background-color: rgb(255, 73, 73);
+}
+
+select {
+    margin: 0 0 5px 30px;
+}

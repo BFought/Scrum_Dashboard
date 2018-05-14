@@ -1,0 +1,33 @@
+<div>
+  <h3>Create a new item</h3>
+  <form (ngSubmit)="createItem(priority.value)" #myForm="ngForm">
+    <table>
+      <tr>
+        <td>Title:</td>
+        <td><input type="text" name="item.title" [(ngModel)]="item.title" required></td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td><textarea name="item.description" [(ngModel)]="item.description" required></textarea></td>
+      </tr>
+      <tr>
+        <td>Value:</td>
+        <td>
+          <select name="priority" #priority required>
+            <option [ngValue]="null">0</option>
+            <option [ngValue]="1">1</option>
+            <option [ngValue]="2">2</option>
+            <option [ngValue]="3">3</option>
+            <option [ngValue]="4">4</option>
+            <option [ngValue]="5">5</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" [disabled]="!myForm.form.valid">Create</button>
+    <button type="button" (click)="toAccess()">Cancel</button>
+  </form>
+  <p *ngFor="let error of errors" style="color: red">
+    {{ error }}
+  </p>
+</div>

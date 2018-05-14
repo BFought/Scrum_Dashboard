@@ -1,0 +1,13 @@
+Overall description of sprint:
+    Problems from yesterday, issues resolved, status for meeting, tracking by day,
+
+List format - for users:
+    Item > click item to display details including:
+        title, description, show more to see full details, color status => {gray: listed, red: failed test/but in progress, blue: in progress w/o issues, yellow: testing green: completed}
+
+
+Table format - for admins:
+    Shows all items and a list of users; user links show users lists including contact info for that team member
+
+
+

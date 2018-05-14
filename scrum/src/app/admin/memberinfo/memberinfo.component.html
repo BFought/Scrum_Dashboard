@@ -1,0 +1,19 @@
+<h1>Member Information</h1>
+<div>
+    <div>
+        <table>
+            <div class="showinfo">
+                <tr>
+                    <td>Name: {{ user.name }}</td>
+                </tr>
+                <tr>
+                    <td>Email: <a href="">{{ user.email }}</a></td>
+                </tr>
+                <tr>
+                    <td><a [routerLink]="['/admin/dashboard']"><button class="back" type="button" name="button">Back</button></a></td>
+                </tr>
+            </div>
+        </table>
+    </div>
+</div>
+<router-outlet></router-outlet>

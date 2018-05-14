@@ -1,0 +1,14 @@
+a:visited {
+    color: rgb(0, 147, 24);
+}
+
+.back{
+    height: 24px;
+    margin-left: .5%;
+    background: linear-gradient(#E0E0E0, #9E9E9E, black);
+    color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px grey;
+    text-decoration: none;
+}

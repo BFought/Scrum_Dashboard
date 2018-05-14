@@ -1,0 +1,17 @@
+#wrapper {
+    width: 40vw;
+    height: 60vh;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: top;
+}
+
+table {
+    text-align: left;
+    margin: 10px auto;
+}
+
+p {
+    color: red;
+}

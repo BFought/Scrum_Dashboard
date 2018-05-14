@@ -1,0 +1,28 @@
+<div>
+  <h1>Edit Item</h1>
+  <form (ngSubmit)="editItem(priority.value)" #myForm="ngForm">
+    <table>
+      <tr>
+        <td>Title:</td>
+        <td><input type="text" name="item.title" [(ngModel)]="item.title" required></td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td><textarea name="item.description" [(ngModel)]="item.description" required></textarea></td>
+      </tr>
+      <tr>
+        <td>Value:</td>
+        <td>
+          <select [(ngModel)]="item.value" required>
+            <option *ngFor="let value of values">{{value}}</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <button type="submit" [disabled]="!myForm.form.valid">Create</button>
+    <button type="button" (click)="toAdmin()">Cancel</button>
+  </form>
+  <p *ngFor="let error of errors" style="color: red">
+    {{ error }}
+  </p>
+</div>

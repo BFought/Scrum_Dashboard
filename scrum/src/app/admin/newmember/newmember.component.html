@@ -1,0 +1,26 @@
+<div id="wrapper">
+  <h1>New Member</h1>
+  <p class="red-text" *ngFor="let each of errors">{{ each }}</p>
+  <div class="addform">
+      <form (ngSubmit)="createUser()" #myForm="ngForm">
+        <table>
+          <tr>
+            <td>Name:</td>
+            <td><input type="text" name="user.name" required minlength="3" [(ngModel)]="user.name"></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" name="user.email" required [(ngModel)]="user.email"></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" name="user.password" required [(ngModel)]="user.password"></td>
+          </tr>
+          <tr>
+            <td><button type="submit">Create</button></td>
+            <td><button type="button" (click)="toHome()">Cancel</button></td>
+          </tr>
+        </table>
+      </form>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+Fix edit
+// Add member info //
+reload once logged in is ok
+
+css-grid
+
+
+drag-n-drop!!!
+Chat component?
+
+email/message sent when task is assigned
+
+when task is marked complete, others are notified
+
+adding storage for these messages
+
+Ask someone who works with scrum to test it
